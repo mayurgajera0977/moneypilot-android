@@ -1,0 +1,20 @@
+{
+  "id": ".",
+  "name": "MoneyPilot — Personal & Business Finance",
+  "short_name": "MoneyPilot",
+  "description": "Personal and business income, expense, cheque and daily reporting tracker.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f9ff",
+  "theme_color": "#f7f9ff",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

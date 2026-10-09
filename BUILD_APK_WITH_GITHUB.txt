@@ -1,0 +1,42 @@
+MONEYPILOT — FASTEST ROUTE TO A COMPILED DEBUG APK
+
+This project includes a GitHub Actions workflow at:
+.github/workflows/build-apk.yml
+
+REQUIREMENTS
+- A GitHub account
+- This extracted project folder
+- Internet access for GitHub Actions to download Gradle and Android SDK packages
+
+STEPS
+1. Create a new GitHub repository (for example: moneypilot-android). Keep it private if the source should not be public.
+2. Upload the CONTENTS of this project folder to the repository root, including the hidden .github folder and its workflow file.
+   IMPORTANT: The repository root must contain settings.gradle, build.gradle, app/, and .github/workflows/build-apk.yml.
+3. Commit the files to the main or master branch.
+4. Open the repository's Actions tab.
+5. Select “Build MoneyPilot APK” and click “Run workflow”, or push a commit to main/master to trigger it.
+6. Wait for the workflow to finish. If it fails, open the run and inspect the first Gradle/build error in the logs.
+7. In the successful run, download the “MoneyPilot-debug-apk” artifact.
+8. Extract the downloaded artifact ZIP. It contains app-debug.apk.
+9. Transfer the APK to an Android phone and install it. Allow installation from that source only if you trust the APK.
+
+WHAT THIS PRODUCES
+- A compiled DEBUG APK suitable for testing on your own device.
+- It is not a signed production/release APK for broad commercial distribution.
+- The APK has not been built until the GitHub Actions run succeeds. This environment cannot execute that remote workflow or certify a physical-device test.
+
+TESTING CHECKLIST ON A REAL ANDROID DEVICE
+- Install and launch the app.
+- Create a local profile and sign in.
+- Add and edit an income and expense; close and reopen the app to confirm persistence.
+- Export and restore a backup.
+- Add the MoneyPilot home-screen widget; test Expense and Income shortcuts.
+- Change widget styles in Settings and confirm the widget updates.
+- Test import/export and daily reports.
+- Test on the Android versions and screen sizes you plan to support.
+
+LIMITATIONS TO UNDERSTAND
+- Local profiles are not SMS-OTP verified.
+- Cloud sync is not configured; phone and PC data are separate.
+- A successful CI build proves compilation, not correct behavior on every device.
+- For commercial release, configure a protected signing key, build a signed release, provide a privacy policy, and complete QA. Never upload your signing key or passwords to the repository.
